@@ -89,7 +89,7 @@ namespace sleep
 		sleep_mode(); //On met en veille ; on attend.
 		//* Le programme reprend ici après la sortie du mode veille et l'appel à wakeUp *
 		
-		//--Message de log (on ne peut pas le mettre dans la fonction wakeUp, car l'appel aux fonctions serial est déconseillé dans les ISR
+		//--Message de log (on ne peut pas le mettre dans la fonction wakeUp, car l'appel aux fonctions serial est déconseillé dans les ISR)
 		#ifdef ARDUINO_SLEEP_LOG_ENABLE
 		Serial.println(messages[1]);
 		Serial.flush(); //On affiche immédiatement ; pas question de laisser le message traîner dans le buffer :p
