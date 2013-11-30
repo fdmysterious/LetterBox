@@ -51,18 +51,13 @@ void setup()
 /*
 	La fonction suivante contient la boucle principale
 	du programme. Voici son déroulement :
-		-> On met l'arduino en veille.
-		-> Quand l'arduino se réveille, on procède à la détection.
-		-> Si un élément à été détecté, on l'envoie sur la communication
-		   Serial.
+		-> On procède à la détection (comme ça on en fait une avant la première mise en veille)
+		-> Si un résultat à été détecté, on l'affiche.
+		-> On met en veille.
 */
 void loop()
 {
+	uint8_t result;
+	if((result = detect())) Serial.println(result);
 	sleep::now();
-	uint8_t result = detect();
-
-	if(result)
-	{
-		Serial.println(result);
-	}
 }
