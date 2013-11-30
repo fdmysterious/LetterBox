@@ -18,7 +18,7 @@
 uint8_t detect()
 {
 	//-=Détection batterie faible=-//
-	if(/*TODO*/)
+	if(!digitalRead(pin::lowbattery))
 	{
 		return 0x01;
 	}

@@ -17,6 +17,7 @@ namespace pin
 	const uint8_t interrupt = 2;
 	const uint8_t door = 3;
 	const uint8_t trapdoor = 4;
+	const uint8_t lowbattery = 5;
 	
 	//--Fonctions
 	void setup() //Permet d'initialiser les modes des pins
@@ -24,6 +25,7 @@ namespace pin
 		pinMode(interrupt, INPUT);
 		pinMode(door, INPUT);
 		pinMode(trapdoor, INPUT);
+		pinMode(lowbattery, INPUT);
 	}
 }
 
