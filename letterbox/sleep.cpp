@@ -22,7 +22,7 @@
 	configurée pour le réveil, ainsi qu'en réactivant tous les éléments
 	qui ont été arrétés pour économiser de l'énergie.
 */
-void wakeUp()
+static void wakeUp()
 {
 	cli(); //Désactive les interruptions, pour éviter de reappeler cette fonction une deuxième fois.
 
@@ -34,16 +34,17 @@ void wakeUp()
 	sei(); //On réactive les interruptions.
 }
 //-=Fin de la section=-//
+
 namespace sleep
 {
 	void setup()
 	{
 		//-=Réglage des pins=-//
-		pinMode(2, INPUT);
+		pinMode(pin::interrupt, INPUT);
 		//-=Fin de la section=-//
 			
 		//-=Définition du mode de mise en veille=-//
-		set_sleep_mode(SLEEP_MODE_PWR_SAVE);
+		set_sleep_mode(SLEEP_MODE);
 		//-=Fin de la section=-//
 	}
 
@@ -60,7 +61,7 @@ namespace sleep
 	*/
 	void now()
 	{
-		#ifdef ARDUINO_SLEEP_LOG_ENABLE
+		#ifdef SLEEP_LOG_ENABLE
 		Serial.println(messages[0]);
 		Serial.flush();
 		#endif
@@ -79,7 +80,7 @@ namespace sleep
 		power_twi_disable();
 		//-=Fin de la section=-//
 
-		while(!digitalRead(2)) //Sécurité pour éviter une interruption non voulue.
+		while(!digitalRead(pin::interrupt)) //Sécurité pour éviter une interruption non voulue.
 		{
 			delay(1); //On attend un peu pour laisser éventuellement le temps d'enlever le contact
 		}
@@ -90,7 +91,7 @@ namespace sleep
 		//* Le programme reprend ici après la sortie du mode veille et l'appel à wakeUp *
 		
 		//--Message de log (on ne peut pas le mettre dans la fonction wakeUp, car l'appel aux fonctions serial est déconseillé dans les ISR)
-		#ifdef ARDUINO_SLEEP_LOG_ENABLE
+		#ifdef SLEEP_LOG_ENABLE
 		Serial.println(messages[1]);
 		Serial.flush(); //On affiche immédiatement ; pas question de laisser le message traîner dans le buffer :p
 		#endif
