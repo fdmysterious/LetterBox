@@ -18,11 +18,29 @@
 #include <Arduino.h> //Pour exploiter les fonctions de l'Arduino.
 
 #include "pins.h"
+#include "config.h"
 //-=Fin de la section=-//
 
-//-=Constantes de configuration=-//
-#define INFRARED_DETECTION_TIME 10000	//Définit le temps pendant lequel la détection infrarouge doit avoir lieu.
-#define INFRARED_DETECTION_THRESOLD 0.5	//Définit le seuil de la détection infrarouge.
+//-=Constantes de configuration (défaut)=-//
+//--Infrarouge
+/*
+	La constante de configuration suivante
+	définit le temps pendant lequel la détection
+	infrarouge doit durer.
+*/
+#ifndef DETECTION_INFRARED_TIME
+#define DETECTION_INFRARED_TIME 10000
+#endif
+
+/*
+	La constante de configuration suivante
+	permet de définir le seuil pour lequel
+	la détection infrarouge doit agir.
+*/
+#ifndef DETECTION_INFRARED_THRESOLD
+#warning TODO
+#define DETECTION_INFRARED_THRESOLD /*TODO*/
+#endif
 //-=Fin de la section=-//
 
 uint8_t detect(); //Permet de détecter si il y a eu un événement

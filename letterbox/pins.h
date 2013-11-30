@@ -19,7 +19,7 @@ namespace pin
 	const uint8_t trapdoor = 4;
 	
 	//--Fonctions
-	void init() //Permet d'initialiser les modes des pins
+	void setup() //Permet d'initialiser les modes des pins
 	{
 		pinMode(interrupt, INPUT);
 		pinMode(door, INPUT);

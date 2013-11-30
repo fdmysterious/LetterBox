@@ -10,10 +10,12 @@
 
 //-=Inclusion des headers=-//
 #include <Arduino.h>
-#include <SoftwareSerial.h>
+
+#include "pins.h"
+#include "config.h"
 //-=Fin de la section=-//
 
-//-=Constantes de configuration=-//
+//-=Constantes de configuration (défaut)=-//
 /*
 	La constante suivante permet de définir le mode de veille
 	choisi. Il y a plusieurs mode de veille disponibles,
@@ -31,16 +33,18 @@
 		* SLEEP_MODE_STANDBY
 		* SLEEP_MODE_PWR_DOWN
 */
-#define ARDUINO_SLEEP_MODE SLEEP_MODE_PWR_SAVE
+#ifndef SLEEP_MODE
+#define SLEEP_MODE SLEEP_MODE_PWR_SAVE
+#endif
+//-=Fin de la section=-//
 
-/*
-	La constante suivante est à activer si on souhaite avoir des messages de log
-	sur le Serial. On peut ensuite changer ces messages. Si on veut désactiver
-	l'affichage, commenter la déclaration suivante suffit.
-*/
-#define ARDUINO_SLEEP_LOG_ENABLE
 namespace sleep
 {
+	/*
+		La variable suivante contient
+		les messages affichés si la constante
+		SLEEP_LOG_ENABLE est définie.
+	*/
 	const String messages[2] = 
 	{
 	   "Mise en veille...",
