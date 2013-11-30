@@ -38,9 +38,16 @@
 	la détection infrarouge doit agir.
 */
 #ifndef DETECTION_INFRARED_THRESOLD
-#warning TODO
+#error TODO
 #define DETECTION_INFRARED_THRESOLD /*TODO*/
 #endif
+//-=Fin de la section=-//
+
+//-=Constantes événements=-//
+#define EVENT_NONE			0x00
+#define EVENT_LOWBATTERY	0x42
+#define EVENT_DOOROPENED	0x44
+#define EVENT_LETTER		0x4C
 //-=Fin de la section=-//
 
 uint8_t detect(); //Permet de détecter si il y a eu un événement

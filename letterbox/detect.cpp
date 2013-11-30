@@ -20,14 +20,14 @@ uint8_t detect()
 	//-=Détection batterie faible=-//
 	if(!digitalRead(pin::lowbattery))
 	{
-		return 0x01;
+		return EVENT_LOWBATTERY;
 	}
 	//-=Fin de la section=-//
 	
 	//-=Détection porte ouverte=-//
 	else if(!digitalRead(pin::door))
 	{
-		return 0x02;
+		return EVENT_DOOROPENED;
 	}
 	//-=Fin de la section=-//
 	
@@ -41,11 +41,13 @@ uint8_t detect()
 				moyenne de ces trois valeurs, et si elles sont au dessus du seuil défini par
 				INFRARED_DETECTION_THRESOLD, alors il y a eu détection.
 		*/
+		
+		return EVENT_LETTER;
 	}
 	//-=Fin de la section=-//
 	
 	else
 	{
-		return 0x00; //On a rien détecté
+		return EVENT_NONE; //On a rien détecté
 	}
 }
