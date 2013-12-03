@@ -1,6 +1,6 @@
 <Qucs Schematic 0.0.17>
 <Properties>
-  <View=-91,0,1593,996,0.909091,0,0>
+  <View=-91,-60,1593,1005,0.909091,0,60>
   <Grid=10,10,0>
   <DataSet=batterie_faible_parfaite.dat>
   <DataDisplay=batterie_faible_parfaite.sch>
@@ -20,11 +20,12 @@
 <Wires>
 </Wires>
 <Diagrams>
-  <Rect 40 862 1506 782 3 #c0c0c0 1 00 1 0 0.01 0.25 1 -0.666115 0.5 5.67727 1 -1 0.2 1 315 0 225 "" "" "">
+  <Rect 40 852 1506 782 3 #c0c0c0 1 00 1 0 0.01 0.25 1 -1 1 10 1 -1 0.2 1 315 0 225 "" "" "">
 	<"batterie_faible_batregul:In.Vt" #0000ff 2 3 0 0 0>
 	<"batterie_faible_batregul:Out.Vt" #ff0000 0 3 0 0 0>
 	<"batterie_faible_batregul:Ureg.Vt" #ff00ff 2 3 0 3 0>
 	<"batterie_faible_batregul:Ubat.Vt" #00ff00 0 3 0 0 0>
+	<"batterie_faible_batregul:Uref.Vt" #ff5500 2 3 0 2 0>
   </Rect>
 </Diagrams>
 <Paintings>
