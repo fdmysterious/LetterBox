@@ -3,30 +3,34 @@
  ************
  
  Auteur : Florian Dupeyron (My?terious)
- Description : Contient les constantes pour associer les entr�es/sorties aux pins de l'arduino.
+ Description : Permet de configurer les pins.
 */
 #ifndef HEADER_PINS
 #define HEADER_PINS
 
 //-=Inclusion des headers=-//
-#include <inttypes.h> //Pour uint8_t
+#include <inttypes.h> //pour le type uint8_t
+#include <Arduino.h>
 //-=Fin de la section=-//
 
 namespace pin
 {
-	const uint8_t interrupt = 2;
-	const uint8_t door = 3;
-	const uint8_t trapdoor = 4;
-	const uint8_t lowbattery = 5;
+	#error Configurer les numéros des pins.
+	const uint8_t door     = /*TODO*/;
+	const uint8_t trapdoor = /*TODO*/;
 	
-	//--Fonctions
-	void setup() //Permet d'initialiser les modes des pins
-	{
-		pinMode(interrupt, INPUT);
-		pinMode(door, INPUT);
-		pinMode(trapdoor, INPUT);
-		pinMode(lowbattery, INPUT);
-	}
+	const uint8_t debugLed = 13;
+	
+	//-=Pins XBee=-//
+	const uint8_t xbee_rx = 3;
+	const uint8_t xbee_tx = 4;
+	//-=Fin de la section=-//
+	
+	//-=Relai d'arrêt=-//
+	const uint8_t shutdownRelay = /*TODO*/;
+	//-=Fin de la section=-//
+	
+	void setup();
 }
 
 #endif

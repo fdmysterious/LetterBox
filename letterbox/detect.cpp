@@ -17,37 +17,17 @@
 
 uint8_t detect()
 {
-	//-=Détection batterie faible=-//
-	if(!digitalRead(pin::lowbattery))
-	{
-		return EVENT_LOWBATTERY;
-	}
-	//-=Fin de la section=-//
+	uint8_t event = EVENT_NONE;
 	
-	//-=Détection porte ouverte=-//
-	else if(!digitalRead(pin::door))
+	if(digitalRead(pin::door))
 	{
-		return EVENT_DOOROPENED;
+		event = EVENT_DOOROPENED;
 	}
-	//-=Fin de la section=-//
 	
-	//-=Détection trappe ouverte + infrarouge=-//
-	else if(!digitalRead(pin::trapdoor))
+	else if(digitalRead(pin::trapdoor))
 	{
-		/*
-			La détection à partir du capteur infrarouge fonctionne de la manière suivante :
-				-> Pendant une durée définie par la constante INFRARED_DETECTION_TIME,
-				on prélève trois mesures de la diode infrarouge réceptrice. On fait ensuite une
-				moyenne de ces trois valeurs, et si elles sont au dessus du seuil défini par
-				INFRARED_DETECTION_THRESOLD, alors il y a eu détection.
-		*/
-		
-		return EVENT_LETTER;
+		event = EVENT_LETTER;
 	}
-	//-=Fin de la section=-//
 	
-	else
-	{
-		return EVENT_NONE; //On a rien détecté
-	}
+	return EVENT_NONE;
 }

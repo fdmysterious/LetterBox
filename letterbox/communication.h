@@ -1,36 +1,1 @@
-/*********************
- *-=communication.h=-*
- *********************
-
- Auteur : Florian Dupeyron (My?terious)
- Description : Contient les diffÃ©rentes fonctions assurant la communication entre
-	La boÃ®te aux lettres et l'utilisateur.
-*/
-#ifndef HEADER_COMMUNICATION
-#define HEADER_COMMUNICATION
-
-//-=Inclusion des headers=-//
-#include <inttypes.h>
-#include <Arduino.h>
-
-#include "pins.h"
-#include "config.h"
-//-=Fin de la section=-//
-
-//-=Constantes de configuration (dÃ©faut)=-//
-//--Serial
-/*
-	La constante suivante dÃ©finit le "Baud Rate"
-	pour lequel la communication Serial doit fonctionner.
-*/
-#ifndef COMMUNICATION_SERIAL_BAUD_RATE
-#define COMMUNICATION_SERIAL_BAUD_RATE 9600
-#endif
-//-=Fin de la section=-//
-
-namespace communication
-{
-	void setup(); //Permet de configurer la communication.
-}
-
-#endif
+/********************* *-=communication.h=-* *********************  Auteur : Florian Dupeyron (My?terious) Description : Permet de gérer la communication avec le XBee*/#ifndef HEADER_COMMUNICATION#define HEADER_COMMUNICATION//-=Constantes=-//#ifndef XBEE_SOFTWARE_SERIAL#warning XBEE_SOFTWARE_SERIAL is not defined. Using default value (0)#define XBEE_SOFTWARE_SERIAL 0#endif#ifndef XBEE_BAUD_RATE#warning XBEE_BAUD_RATE is not defined. Using default value (9600)#define XBEE_BAUD_RATE 9600#endif//-=Fin de la section=-////-=Inclusion des headers=-//#include <inttypes.h>#include <Arduino.h>#if XBEE_SOFTWARE_SERIAL == 1#include <SoftwareSerial.h>#endif#include "config.h"#include "pins.h"//-=Fin de la section=-//namespace communication{	#if XBEE_SOFTAWRE_SERIAL == 1	SoftwareSerial XBee(pin::xbee_rx pin::xbee_tx);	#else	HardwareSerial &XBee = Serial; //On fait une référence vers le Serial matériel.	#endif		//Met en place la communication avec le XBee	void setup();}#endif
