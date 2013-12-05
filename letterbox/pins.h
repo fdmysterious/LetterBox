@@ -15,7 +15,7 @@
 
 namespace pin
 {
-	#error Configurer les numéros des pins.
+	#error Configurer les numeros des pins.
 	const uint8_t door     = /*TODO*/;
 	const uint8_t trapdoor = /*TODO*/;
 	
