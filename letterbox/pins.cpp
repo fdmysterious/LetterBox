@@ -14,11 +14,11 @@ namespace pin
 {
 	void setup()
 	{
-		pinMode(door, INPUT);
-		pinMode(trapdoor, INPUT);
-		
-		pinMode(debugLed, OUTPUT);
+		//pinMode(door, INPUT);
+		//pinMode(trapdoor, INPUT);
 
-		pinMode(shutdownRelay, OUTPUT);
+		//pinMode(debugLed, OUTPUT);
+
+		pinMode(shutdownPin, OUTPUT);
 	}
 }

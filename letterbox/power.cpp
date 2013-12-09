@@ -15,6 +15,6 @@ namespace power
 {
 	void shutdown()
 	{
-		digitalWrite(pin::shutdownRelay, HIGH);
+		digitalWrite(pin::shutdownPin, HIGH);
 	}
 }

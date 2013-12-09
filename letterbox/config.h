@@ -13,4 +13,7 @@
 #define XBEE_BAUD_RATE 9600
 //-=Fin de la section=-//
 
+//-=Options autres=-//
+//-=Fin de la section=-//
+
 #endif
