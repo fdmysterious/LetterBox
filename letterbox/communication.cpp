@@ -22,10 +22,11 @@ namespace communication
 		bool run = true;
 		
 		char * buffer = malloc(sizeof(RECEIVE_BUFFER_SIZE)); //On alloue de la place pour notre buffer
+		uint32_t i = 0;										 //Permet de savoir où on en est dans l'index
 		while(run)
 		{
 			memset(buffer, '\0', RECEIVE_BUFFER_SIZE);		//On vide le buffer
-			uint32_t i = 0;									//On réinitialise l'index.
+			i = 0;											//On réinitialise l'index.
 
 			bool lineReturn = false;
 			while(!lineReturn)
@@ -40,7 +41,7 @@ namespace communication
 				}
 			}
 			
-			if(String(buffer).startsWith('OK'))
+			if(String(buffer).startsWith('OK')) //Si le message commence par OK
 			{
 				run = false;	//On a détecté le message ; on peut sortir de la boucle !
 			}
