@@ -43,7 +43,7 @@ namespace communication
 				}
 			}
 			
-			if(String(buffer).startsWith('OK')) //Si le message commence par OK
+			if(String(buffer).startsWith("OK")) //Si le message commence par OK
 			{
 				run = false;	//On a détecté le message ; on peut sortir de la boucle !
 			}
