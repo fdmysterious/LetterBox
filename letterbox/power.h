@@ -16,6 +16,12 @@
 namespace power
 {
 	/*
+		La fonction suivante permet de configurer l'arduino en désactivant
+		les fonctions non utilisées ; le but étant d'économiser de l'énergie.
+	*/
+	void setup();
+	
+	/*
 		La fonction suivante ordonne l'arrêt de l'arduino en envoyant un signal HIGH sur le pin
 		shudtownRelay.
 	*/

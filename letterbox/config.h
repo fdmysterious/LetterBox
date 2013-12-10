@@ -13,6 +13,10 @@
 #define XBEE_BAUD_RATE 9600
 //-=Fin de la section=-//
 
+//-=Autres options de la communication=-//
+#define RECEIVE_BUFFER_SIZE 8
+//-=Fin de la section=-//
+
 //-=Options autres=-//
 //-=Fin de la section=-//
 
