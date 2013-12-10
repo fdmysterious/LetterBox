@@ -7,6 +7,8 @@
 */
 //-=Inclusion des headers=-//
 #include <memory.h>
+#include <inttypes.h>
+
 #include "communication.h"
 //-=Fin de la section=-//
 
