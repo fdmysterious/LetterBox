@@ -14,8 +14,8 @@ namespace pin
 {
 	void setup()
 	{
-		//pinMode(door, INPUT);
-		//pinMode(trapdoor, INPUT);
+		pinMode(door, INPUT);
+		pinMode(trapdoor, INPUT);
 
 		//pinMode(debugLed, OUTPUT);
 
