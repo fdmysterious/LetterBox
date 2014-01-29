@@ -27,7 +27,7 @@ namespace pin
 	//-=Fin de la section=-//
 	
 	//-=Relai d'arrêt=-//
-	const uint8_t shutdownPin = /*TODO*/;
+	const uint8_t shutdownPin = 2;
 	//-=Fin de la section=-//
 	
 	void setup();
