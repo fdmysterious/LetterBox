@@ -15,16 +15,10 @@
 
 namespace pin
 {
-	#error Configurer les numéros des pins.
-	//const uint8_t door     = /*TODO*/;
-	//const uint8_t trapdoor = /*TODO*/;
+	const uint8_t door     = 3;
+	const uint8_t trapdoor = 4;
 	
 	//const uint8_t debugLed = 13;
-	
-	//-=Pins XBee=-//
-	const uint8_t xbee_rx = 3;
-	const uint8_t xbee_tx = 4;
-	//-=Fin de la section=-//
 	
 	//-=Relai d'arrêt=-//
 	const uint8_t shutdownPin = 2;
