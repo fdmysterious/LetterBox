@@ -9,7 +9,7 @@
 #define HEADER_CONFIG
 
 //-=Configuration du XBee=-//
-#define XBEE_SOFTWARE_SERIAL 1
+#define XBEE_SOFTWARE_SERIAL 0
 #define XBEE_BAUD_RATE 9600
 //-=Fin de la section=-//
 
